@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
+*{
+		font-family:Orbitron;
+		font-size:9px;
+		text-align:center;
+		letter-spacing:5px;
+		color:#5a84a2;
+		font-weight:600;
+		}
+body{
+		padding:0;
+		margin:0;
+		}
+.calculator{
+		width:80%;
+		margin:15vh auto auto auto;
+		padding:15px;
+		background-colo:lightblue;
+		display:grid;
+		grid-template-rows:repeat(9, 35px);
+		grid-template-columns:repeat(4, 1fr);
+		grid-template-areas:
+		"screen screen screen screen"
+		"screen screen screen screen"
+		"screen screen screen screen"
+		"clearAll cancelDigit divide multiply"
+	  "seven eight nine minus"
+	  "four five six add"
+	  "one two three equal"
+	  "zero point modulus equal"
+	  "name name name equal";
+	  grid-gap:10px;
+	  border:.75px solid #dbdbdb;
+	  border-radius:10px;
+		}
+.calculator div, .calculator section{
+		line-height:35px;
+		background-colo: pink;
+		border-radius:5px;
+		box-shadow:
+		-2px -1px 8px rgba(255,255,255,1),
+		-2px -1px 12px rgba(255,255,255,.5),
+		inset 2px 2px 4px rgba(255,255,255,.1),
+		2px 2px 8px rgba(0,0,0,.15);
+		}
+.calculator div:hover, .calculator section:hover{
+		box-shadow:
+		inset -2px -1px 8px rgba(255,255,255,1),
+		inset -2px -1px 12px rgba(255,255,255,.5),
+		inset 2px 2px 4px rgba(255,255,255,.1),
+		inset 2px 2px 8px rgba(0,0,0,.15);
+		}
+.screen .question:hover,.screen .answer:hover,.calculator .name:hover,.equal > section:hover{
+		box-shadow:0px 0px 0px #fff;
+		}
+.screen .question,.screen .answer,.calculator .name,.equal > section{
+		box-shadow:0px 0px 0px #fff;
+		}
+.screen{
+		grid-area:screen;
+		display:grid;
+		grid-template-rows:repeat(3, 35px);
+		grid-template-columns:repeat(3, 1fr);
+		grid-template-areas:
+		"question question question"
+		"blank blank blank"
+		"answer answer answer";
+		border:.75px solid #dbdbdb;
+	  border-radius:10px;
+		}
+.screen .question{
+		grid-area:question;
+		background-colo: lightskyblue;
+		text-align:right;
+		font-size:15px;
+		padding:5px;
+		}
+.screen .answer{
+		grid-area: answer;
+		background-colo: lightskyblue;
+		text-align:right;
+		font-size:15px;
+		padding:5px;
+		}
+.equal{
+		grid-area:equal;
+		display:grid;
+		line-height:70px;
+		align-content: center;
+		}
+.name{
+		grid-area:name;
+		letter-spacing:2px;
+		}
+.divide,.multiply,.add,.minus,.equal > section,.point{
+		font-size:13px;
+		}
+.name{
+		font-size:11.5px;
+		}
+
+
+@media(min-width:768px){
+.calculator{
+		width:30%;
+		}
+	}
